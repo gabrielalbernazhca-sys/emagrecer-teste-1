@@ -1,0 +1,653 @@
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
+:root {
+    /* Color Palette */
+    --primary-color: #10B981;
+    --primary-dark: #059669;
+    --primary-light: #D1FAE5;
+    --secondary-color: #064E3B;
+
+    --text-main: #1F2937;
+    --text-secondary: #4B5563;
+    --text-light: #9CA3AF;
+
+    --bg-page: #F9FAFB;
+    --bg-white: #FFFFFF;
+
+    --accent-red: #EF4444;
+    --accent-bg-red: #FEF2F2;
+
+    /* Spacing & Layout */
+    --container-width: 1100px;
+    --header-height: 80px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.4);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* =========================================
+   2. UTILITIES & LAYOUT
+   ========================================= */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    /* 20px padding on mobile */
+}
+
+.section-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+
+/* Button Styles */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+    text-align: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+    filter: brightness(1.1);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.cta-button.large {
+    font-size: 1.25rem;
+    padding: 1.25rem 3.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* =========================================
+   3. SECTIONS
+   ========================================= */
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
+    padding: 4rem 0 5rem;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* Responsive font size */
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    letter-spacing: -0.03em;
+}
+
+.hero-content .subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform var(--transition-normal);
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-image:hover img {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+/* --- Pain Section --- */
+.pain {
+    background-color: var(--bg-white);
+    padding: 5rem 0;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pain-item {
+    background: var(--bg-page);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    height: 100%;
+    /* Equal height */
+}
+
+.pain-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background-color: #fff;
+}
+
+.pain-item .icon-box {
+    background-color: var(--accent-bg-red);
+    color: var(--accent-red);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.pain-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.pain-item p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* --- Benefits Section --- */
+.benefits {
+    padding: 5rem 0;
+    background: #ECFDF5;
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.benefits-wrapper {
+    background: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefits-list li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.benefits-list li:last-child {
+    margin-bottom: 0;
+}
+
+.check-icon {
+    flex-shrink: 0;
+    color: var(--primary-color);
+    background: var(--primary-light);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.benefits-list h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.benefits-list p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.benefits-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- FAQ Inserts --- */
+.faq-insert {
+    padding: 3rem 0;
+    background-color: var(--bg-page);
+}
+
+.faq-item.single-item {
+    background: var(--bg-white);
+    border: 1px solid #E5E7EB;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item.single-item h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.faq-item.single-item p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* --- How It Works --- */
+.how-it-works {
+    padding: 5rem 0;
+    background-color: var(--bg-white);
+}
+
+.how-it-works h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.step-card {
+    flex: 1;
+    position: relative;
+    padding: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 0 4px var(--bg-white);
+}
+
+.step-connector {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #E5E7EB;
+    align-self: flex-start;
+    margin-top: 1.25rem;
+    opacity: 0.5;
+}
+
+.how-it-works-image {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.how-it-works-image img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Social Proof --- */
+.social-proof {
+    background-color: #FAFAFA;
+    padding: 4rem 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.proof-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.proof-image img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-white);
+    box-shadow: var(--shadow-md);
+}
+
+.proof-content {
+    flex: 1;
+}
+
+.stars {
+    color: #F59E0B;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.main-proof {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.sub-proof {
+    color: var(--text-secondary);
+}
+
+/* --- Final CTA (Offer) --- */
+.final-cta {
+    padding: 6rem 0;
+    background: var(--bg-white);
+}
+
+.price-box {
+    background: var(--bg-white);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #E5E7EB;
+    text-align: center;
+}
+
+.price-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+.price-text {
+    margin-bottom: 2rem;
+}
+
+.old-price {
+    display: block;
+    font-size: 1.125rem;
+    text-decoration: line-through;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.connector {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.new-price {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.price-checklist {
+    text-align: left;
+    max-width: 320px;
+    margin: 0 auto 2.5rem;
+}
+
+.price-checklist li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+}
+
+.payment-icons span {
+    background: #F3F4F6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: var(--bg-page);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   4. RESPONSIVE QUERIES
+   ========================================= */
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 700px;
+    }
+
+    .hero-container,
+    .benefits-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-image,
+    .benefits-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image img,
+    .benefits-image img {
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    .hero-image img {
+        transform: none;
+        /* Remove 3D effect on mobile for better fit */
+    }
+
+    .benefits-wrapper {
+        text-align: left;
+        /* Keep checkmarks aligned */
+    }
+
+    .proof-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .proof-content .section-cta-wrapper {
+        justify-content: center !important;
+    }
+
+    .steps-grid {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .step-connector {
+        flex-grow: 0;
+        height: 30px;
+        width: 2px;
+        margin: 0 auto;
+        opacity: 1;
+    }
+
+    .step-card {
+        padding-bottom: 0;
+    }
+
+    /* Force left alignment on benefits list mobile if needed, but centering looks good too.
+       Let's actually keep wrapper left aligned but button centered.
+    */
+    .benefits-wrapper .section-cta-wrapper {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+
+    .price-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .new-price {
+        font-size: 3rem;
+    }
+
+    .proof-wrapper {
+        gap: 1.5rem;
+    }
+
+    .proof-image img {
+        width: 100px;
+        height: 100px;
+    }
+}
