@@ -1,4 +1,4 @@
-[index.html](https://github.com/user-attachments/files/24613363/index.html)
+[index.html](https://github.com/user-attachments/files/24642277/index.html)
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
@@ -21,12 +21,11 @@
             <div class="hero-content">
                 <h1>Emagreça em casa com um método simples, prático e sem academia</h1>
                 <p class="subtitle">Perca até 30kg em 30 dias! Um passo a passo para quem quer perder peso mesmo sem
-                    tempo e sem dietas malucas.
-                </p>
+                    tempo e sem dietas malucas.</p>
                 <a href="#offer" class="cta-button">Quero emagrecer agora</a>
             </div>
             <div class="hero-image">
-                <img src="img/hero.png" alt="Mulher feliz e em forma em casa">
+                <img src="./img/hero.png" alt="Mulher feliz e em forma em casa">
             </div>
         </div>
     </header>
@@ -106,8 +105,8 @@
                 <ul class="benefits-list">
                     <li>
                         <div class="check-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
@@ -120,8 +119,8 @@
                     </li>
                     <li>
                         <div class="check-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
@@ -134,8 +133,8 @@
                     </li>
                     <li>
                         <div class="check-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
@@ -148,8 +147,8 @@
                     </li>
                     <li>
                         <div class="check-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
@@ -162,8 +161,8 @@
                     </li>
                     <li>
                         <div class="check-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
@@ -175,12 +174,12 @@
                         </div>
                     </li>
                 </ul>
-                <div class="section-cta-wrapper" style="text-align: left; margin-top: 2rem;">
+                <div class="section-cta-wrapper">
                     <a href="#offer" class="cta-button">Quero emagrecer agora</a>
                 </div>
             </div>
             <div class="benefits-image">
-                <img src="img/yoga.png" alt="Mulher fazendo exercícios leves em casa">
+                <img src="./img/yoga.png" alt="Mulher fazendo exercícios leves em casa">
             </div>
         </div>
     </section>
@@ -223,7 +222,7 @@
                 </div>
             </div>
             <div class="how-it-works-image">
-                <img src="img/food.png" alt="Alimentação saudável e equilibrada">
+                <img src="./img/food.png" alt="Alimentação saudável e equilibrada">
             </div>
             <div class="section-cta-wrapper">
                 <a href="#offer" class="cta-button">Quero emagrecer agora</a>
@@ -247,15 +246,13 @@
         <div class="container">
             <div class="proof-wrapper">
                 <div class="proof-image">
-                    <img src="img/portrait.png" alt="Mulher feliz e confiante">
+                    <img src="./img/portrait.png" alt="Mulher feliz e confiante">
                 </div>
                 <div class="proof-content">
-                    <div class="stars">
-                        ★★★★★
-                    </div>
+                    <div class="stars">★★★★★</div>
                     <p class="main-proof">“Milhares de pessoas já começaram a aplicar esse método”</p>
                     <p class="sub-proof">Criado para quem busca praticidade e constância</p>
-                    <div class="section-cta-wrapper" style="text-align: left; margin-top: 1.5rem;">
+                    <div class="section-cta-wrapper" style="justify-content: flex-start; margin-top: 1.5rem;">
                         <a href="#offer" class="cta-button">Quero emagrecer agora</a>
                     </div>
                 </div>
@@ -268,11 +265,11 @@
         <div class="container">
             <div class="price-box">
                 <h2>Oferta Exclusiva</h2>
-                <p class="price-text">
+                <div class="price-text">
                     <span class="old-price">De R$ 119,00</span>
                     <span class="connector">por apenas</span>
                     <span class="new-price">R$ 97,00</span>
-                </p>
+                </div>
 
                 <ul class="price-checklist">
                     <li>✅ Perca até 30kg em 30 dias</li>
